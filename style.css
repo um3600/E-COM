@@ -182,8 +182,13 @@ a {
     /* banner */
     .offer-banner{
       margin:60px 8%;
+<<<<<<< HEAD
       background:#000 url('./images/slider1.png') center/cover no-repeat;
       color:#0c0606;
+=======
+      background:#000 url('#') center/cover no-repeat;
+      color:#fff;
+>>>>>>> 0b63179d1152ab3d0bd92871f8911ba21b31b8b7
       padding:60px;
       text-align:center;
       border-radius:6px;
@@ -359,4 +364,8 @@ a {
   }
 }
 
+<<<<<<< HEAD
     
+=======
+    
+>>>>>>> 0b63179d1152ab3d0bd92871f8911ba21b31b8b7
