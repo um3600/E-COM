@@ -114,7 +114,7 @@ body {
 
 .category-wrap {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 25px;
 }
 
@@ -366,13 +366,142 @@ footer {
 }
 
 
-/* ===== Responsive ===== */
+/* Global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f6f6f6;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar */
+.navbar {
+  background: #222;
+  color: #fff;
+  padding: 15px 0;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.navbar .logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.nav-toggle {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Main content */
+.main-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.content-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.content-card h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.content-card p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.content-card .btn {
+  display: inline-block;
+  padding: 10px 25px;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.content-card .btn:hover {
+  background: #333;
+}
+
+
+/* ===== Mobile ===== */
 @media (max-width: 768px) {
-  .blog-hero h1 {
-    font-size: 30px;
+  .nav-links {
+    width: 100%;
+    flex-direction: column;
+    display: none;
+    margin-top: 10px;
+    background: #333;
+    border-radius: 5px;
   }
 
-  .blog-container {
-    padding: 50px 6%;
+  .nav-links a {
+    padding: 10px;
+    border-bottom: 1px solid #444;
+  }
+
+  .nav-links a:last-child {
+    border-bottom: none;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .content-card {
+    padding: 20px;
+    max-width: 90%;
+  }
+
+  .content-card h2 {
+    font-size: 24px;
+  }
+
+  .content-card p {
+    font-size: 14px;
   }
 }

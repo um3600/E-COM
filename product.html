@@ -8,46 +8,84 @@
     <link rel="stylesheet" href="style.css">
     <style>
         .product-wrap {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 22px;
             justify-content: center;
-        }
-
-        .product-card {
-            background: #fff;
             padding: 10px;
-            border-radius: 5px;
-            text-align: center;
-            width: 180px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
         }
 
+        /* Card */
+        .product-card {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 14px;
+            text-align: center;
+            max-width: 260px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            transition: 0.3s ease;
+            border: 1px solid #f1f1f1;
+            overflow: hidden;
+        }
+
+        /* Hover Effect */
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Image */
         .product-card img {
             width: 100%;
-            height: 150px;
-            object-fit: cover;
+            height: 170px;
+            object-fit: contain;
+            border-radius: 10px;
+            transition: 0.3s ease;
         }
 
+        .product-card:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Title */
+        .product-card h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-top: 12px;
+        }
+
+        /* Price */
+        .product-card p {
+            font-size: 15px;
+            font-weight: 700;
+            color: #2563eb;
+            margin: 6px 0;
+        }
+
+        /* Button */
         .product-card button {
-            display: inline-block;
             margin-top: 10px;
-            padding: 6px 12px;
-            background: #0a0c0f;
-            color: #fff;
+            padding: 9px 14px;
+            background: linear-gradient(135deg, #2563eb, #3b82f6);
+            color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
             cursor: pointer;
+            transition: 0.3s ease;
         }
 
+        /* Button Hover */
         .product-card button:hover {
-            background: #0056b3;
+            background: linear-gradient(135deg, #081c60, #040507);
+            transform: scale(1.05);
         }
     </style>
 </head>
 
 <body>
-    <header class="navbar">
+    <!-- <header class="navbar">
         <div class="container">
             <h1 class="logo">Ecomshop</h1>
             <nav>
@@ -56,13 +94,22 @@
                 <a href="blog.html">Blog</a>
                 <a href="contact.html">Contact</a>
                 <a href="My-Cart.html">My Cart</a>
-<<<<<<< HEAD
-
-=======
->>>>>>> 8f224e2 (update)
             </nav>
         </div>
-    </header>
+    </header> -->
+<header class="navbar">
+    <div class="container">
+      <h1 class="logo">Ecomshop</h1>
+      <button class="nav-toggle">&#9776;</button>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="product.html">Products</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+        <a href="My-Cart.html">My Cart</a>
+      </nav>
+    </div>
+  </header>
 
     <section class="product-sec">
         <h2 class="sec-title">Latest Products</h2>
@@ -231,9 +278,9 @@
 
             <div class="product-card">
                 <img src="./images/product14.jpg">
-                <h4>Glasses</h4>
+                <h4>Red Shirt</h4>
                 <span class="price">$250</span>
-                <button class="add-cart" data-id="121" data-name="Glasses" data-price="250"
+                <button class="add-cart" data-id="121" data-name="Red Shirt" data-price="250"
                     data-img="./images/product14.jpg">Add to Cart</button>
             </div>
 
@@ -324,7 +371,14 @@
             });
         });
     </script>
+<script>
+    const toggleButton = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
 
+    toggleButton.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  </script>
 </body>
 
 </html>
