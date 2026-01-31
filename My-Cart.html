@@ -10,18 +10,19 @@
 <body>
 
 <!-- ===== Navbar ===== -->
-<header class="navbar">
-  <div class="container">
+  <header class="navbar">
+    <div class="container">
       <h1 class="logo"><a href="index.html">Ecomshop</a> </h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="product.html">Products</a>
-      <a href="blog.html">Blog</a>
-      <a href="contact.html">Contact</a>
-      <a href="My-Cart.html">My Cart</a>
-    </nav>
-  </div>
-</header>
+      <button class="nav-toggle">&#9776;</button>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="product.html">Products</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+        <a href="My-Cart.html">My Cart</a>
+      </nav>
+    </div>
+  </header>
 
 <!-- ===== Cart ===== -->
 <div class="cart-wrapper">
@@ -150,6 +151,14 @@
   }
 
   renderCart();
+</script>
+<script>
+  const toggleButton = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  toggleButton.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
 </script>
 
 </body>
